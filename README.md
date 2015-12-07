@@ -14,11 +14,11 @@ Copy public key
 
 Start xclok vithout xpra
 
-   ssh -X -p 2020 root@localhost xclock
+   ssh -X -p 2020 root@localhost thunderbird
 
-Or start xclock as xpra process 100
+Or start thunderbird as xpra process 100
 
-   ssh -X -p 2020 root@localhost xpra start :100 --start-child=xclock
+   ssh -X -p 2020 root@localhost xpra start :100 --start-child=thunderbird
 
 And attach to it with
   
@@ -34,7 +34,7 @@ Start ratpoison as display manager
 
 And thunderbird
 
-   ssh -X -p 2020 root@localhost DISPLAY=:200 xclock &
+   ssh -X -p 2020 root@localhost DISPLAY=:200 thunderbird &
 
 And attach to it with
   
