@@ -1,4 +1,4 @@
-# docker-thubnderbird
+# docker-thunderbird
 
 
 
@@ -6,11 +6,11 @@
 
 Run with
 
-    docker run -p 2020:22 -d --name thubnderbird reto/thubnderbird 
+    docker run -p 2020:22 -d --name thunderbird reto/thunderbird 
 
 Copy public key
     
-    docker exec -i thubnderbird /bin/bash -c 'cat > /root/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+    docker exec -i thunderbird /bin/bash -c 'cat > /root/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 
 Start xclok vithout xpra
 
@@ -32,7 +32,7 @@ Start ratpoison as display manager
 
    ssh -X -p 2020 root@localhost DISPLAY=:200 ratpoison & 
 
-And thubnderbird
+And thunderbird
 
    ssh -X -p 2020 root@localhost DISPLAY=:200 xclock &
 
