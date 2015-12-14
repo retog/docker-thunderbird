@@ -27,3 +27,7 @@ Or start thunderbird as xpra process 100
 And attach to it with
   
    xpra --ssh="ssh -p 2020" attach ssh:user@localhost:100
+
+Backup the user data from the data-only-container:
+
+   docker run --volumes-from user-data -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /home/user
