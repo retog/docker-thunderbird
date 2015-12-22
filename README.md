@@ -1,6 +1,6 @@
 # docker-thunderbird
 
-
+Thunderbird and other programs used when processing email
 
 ## Usage example
 
@@ -12,21 +12,17 @@ Run with
 
     docker run -p 2020:22 -d --volumes-from user-data --name thunderbird reto/thunderbird 
 
-Copy public key
+Copy your ssh public key to the container so that you can login via ssh
     
     docker exec -i thunderbird /bin/bash -c 'cat >> /home/user/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 
-Start thunderbird without xpra
-
-   ssh -X -p 2020 user@localhost thunderbird
-
-Or start thunderbird as xpra process 100
-
-   ssh -p 2020 user@localhost xpra start :100 --start-child=thunderbird
-
 And attach to it with
   
-   xpra --ssh="ssh -p 2020" attach ssh:user@localhost:100
+   xpra --ssh="ssh -o \"StrictHostKeyChecking no\" -p 2020" attach ssh:user@localhost:100
+   
+Start thunderbird with  
+
+    ssh -p 2020 user@localhost thunderbird
 
 Backup the user data from the data-only-container:
 
