@@ -1,6 +1,6 @@
 # docker-thunderbird
 
-Thunderbird and other programs used when processing email
+Thunderbird and other programs used when processing email available for connecting with [Xpra](http://xpra.org/).
 
 ## Usage example
 
@@ -18,7 +18,7 @@ Copy your ssh public key to the container so that you can login via ssh
 
 And attach to it with
   
-   xpra --ssh="ssh -o \"StrictHostKeyChecking no\" -p 2020" attach ssh:user@localhost:100
+    xpra --ssh="ssh -o \"StrictHostKeyChecking no\" -p 2020" attach ssh:user@localhost:100
    
 Start thunderbird with  
 
@@ -26,4 +26,4 @@ Start thunderbird with
 
 Backup the user data from the data-only-container:
 
-   docker run --volumes-from user-data -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /home/user
+    docker run --volumes-from user-data -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /home/user
